@@ -4,7 +4,7 @@ const projectsData = [
     {
       id: 1,
       projectTitle: "Modern Office Renovation",
-      image: "/project.jpg",
+      image: "/project1.jpg",
       clientName: "ABC Corporation",
       location: "City Center, New York",
       date: "2023-05-15",
@@ -25,7 +25,7 @@ const projectsData = [
     {
       id: 2,
       projectTitle: "E-commerce Website Development",
-      image: "/project.jpg",
+      image: "/project2.jpg",
       clientName: "XYZ Retailers",
       location: "Online",
       date: "2023-07-20",
