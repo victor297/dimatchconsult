@@ -54,3 +54,4 @@ const faqDataMock = [
     // Add more categories and items as needed
   ];
   
+export default faqDataMock;
