@@ -36,12 +36,12 @@ const Tabs = ({ faqData }: TabsComponentProps) => {
   };
 
   return (
-    <div className="flex justify-center pt-10 mb-10">
-      <div className="bg-[#F4F4F4] w-[200px] h-[230px]">
-        <h1 className="font-bold pl-6 pt-6 pb-4">Categories</h1>
+    <div className="flex flex-col md:flex-row justify-center pt-10 mb-10">
+      <div className="bg-[#F4F4F4] md:w-[200px] w-[320px] md:h-[230px] h-[85px] mb-5 md:mb-0 ml-4 md:ml-0">
+        <h1 className="font-bold pl-6 md:pt-6 pt-2 md:pb-4 pb-2">Categories</h1>
         <div>
           <nav
-            className="flex flex-col space-y-2 px-8"
+            className="flex md:flex-col flex-row space-y-0 md:space-y-2 md:px-8 px-4"
           >
             {faqData.map((category, index) => (
               <button
@@ -59,17 +59,17 @@ const Tabs = ({ faqData }: TabsComponentProps) => {
           </nav>
         </div>
       </div> 
-      <div className="pl-10">
+      <div className="pl-4 md:pl-10">
         {faqData.map((category, index) => (
           <div
             key={index}
             className={activeTab === index + 1 ? '' : 'hidden'}
           >
             {category.items.map((item, itemIndex) => (
-              <div key={itemIndex} className="border border-gray mb-4 p-4">
+              <div key={itemIndex} className="border border-gray mb-4 p-2 md:p-4 w-[350px] md:w-[500px]">
                 <button
                   type="button"
-                  className="font-bold flex items-center justify-between w-[500px]"
+                  className="font-bold flex items-center justify-between w-full"
                   onClick={() => toggleAnswer(itemIndex)}
                 >
                   <span className="text-sm">{item.question}</span>
@@ -84,7 +84,7 @@ const Tabs = ({ faqData }: TabsComponentProps) => {
                 </button>
                 {activeQuestions.includes(itemIndex) && (
                   <div>
-                    <p className="text-gray-500 w-[480px] pt-2 text-sm">{item.answer}</p>
+                    <p className="text-gray-500 md:w-[480px] pt-2 text-sm">{item.answer}</p>
                   </div>
                 )}
               </div>
