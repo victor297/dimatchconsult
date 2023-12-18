@@ -1,5 +1,11 @@
+import ServiceContent from "./ServiceContent";
+
 const Services = () => {
-  return <div>service</div>;
+  return (
+    <div>
+      <ServiceContent />
+    </div>
+  );
 };
 
 export default Services;

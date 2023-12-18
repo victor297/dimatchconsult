@@ -103,13 +103,13 @@ const PageContent = () => {
           <div className=" flex items-center justify-between max-w-screen-xl p-4 lg:p-0">
             <div className="flex flex-col">
               <div className="flex items-center gap-1">
-                <div className="h-2 w-2 bg-green-400"></div> Our project
+                <div className="h-2 w-2 bg-green"></div> Our project
               </div>
               <p className="font-bold text-2xl">
                 You can check our projects as inspiration.
               </p>
             </div>
-            <Link href={"/project"} className="text-white p-4 bg-green-400">
+            <Link href={"/project"} className="text-white p-4 bg-green">
               More Work
             </Link>
           </div>
