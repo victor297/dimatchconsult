@@ -1,11 +1,7 @@
 import ServiceContent from "./ServiceContent";
 
 const Services = () => {
-  return (
-    <div>
-      <ServiceContent />
-    </div>
-  );
+  return <ServiceContent />;
 };
 
 export default Services;
