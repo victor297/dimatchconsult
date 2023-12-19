@@ -19,7 +19,7 @@ const Banner: React.FC<BannerProps> = ({
     <div className={`${height} ${bg} bg-cover bg-center relative `}>
       <div className="w-full lg:w-5/12 bg-opacity-70 bg-slate-800 backdrop-blur-lg absolute inset-0 flex flex-col justify-center gap-6 text-start p-16">
         <div className="flex items-center gap-1 text-white">
-          <div className="h-2 w-2 bg-green-400 "></div> {head}
+          <div className="h-2 w-2 bg-green "></div> {head}
         </div>
 
         <p className="text-white font-bold text-3xl md:text-4xl lg:text-5xl ">

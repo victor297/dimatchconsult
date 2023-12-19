@@ -14,7 +14,7 @@ const PreviewCard = ({ service }: { service: any }) => {
             read more
           </Link>
         </div>
-        <div className=" w-[72px] h-[72px] shrink-0 bg-green-400">{"icon"}</div>
+        <div className=" w-[72px] h-[72px] shrink-0 bg-green">{"icon"}</div>
       </div>
     </div>
   );
