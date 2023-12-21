@@ -29,7 +29,7 @@ class RequestService(models.Model):
 	image = models.CharField(max_length=150)
 
 	def __str__(self):
-		return f"{self.service}"
+		return f"{self.title}"
 
 class ListContent(models.Model):
 	"""\
@@ -38,6 +38,9 @@ class ListContent(models.Model):
 	"""
 	description = models.TextField()
 	service = models.ForeignKey(RequestService, related_name='list_content', on_delete=models.CASCADE)
+
+	def __str__(self):
+		return f"{self.description}"
 
 class FAQCategory(models.Model):
 	name = models.CharField(max_length=80)

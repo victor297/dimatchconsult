@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = get_user_model()
 		fields = [
-			"username", "email", "is_admin", "is_valid"
+			"username", "email", "password",
 		]
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -17,6 +17,7 @@ class ClientSerializer(serializers.ModelSerializer):
 		fields = ('full_name', 'email', 'created_on')
 
 class RequestServiceSerializer(serializers.ModelSerializer):
+	list_content = serializers.StringRelatedField(many=True)
 	class Meta:
 		model = models.RequestService
 		fields = [
@@ -28,5 +29,5 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 
 class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
-		models = models.ListContent
-		fields = ('description',)
+		model = models.ListContent
+		fields = ('description', 'service')

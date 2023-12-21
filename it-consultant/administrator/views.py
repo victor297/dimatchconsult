@@ -10,8 +10,13 @@ from . import serializers
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = get_user_model().objects.all()
 	serializer_class = serializers.UserSerializer
-	permissions_class = [permissions.IsAdminUser]
+	permission_classes = [permissions.IsAdminUser]
 
 class ServiceViewSet(viewsets.ModelViewSet):
 	queryset = models.RequestService.objects.all()
 	serializer_class = serializers.RequestServiceSerializer
+
+class ListContentCreateAPIView(generics.CreateAPIView):
+	queryset = models.ListContent.objects.all()
+	serializer_class = serializers.ListContentSerializer
+	permission_classes = [permissions.IsAdminUser]
