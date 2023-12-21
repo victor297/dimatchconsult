@@ -31,3 +31,30 @@ class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.ListContent
 		fields = ('description', 'service')
+
+class FAQCategorySerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.FAQCategory
+		fields = ("name",)
+
+class FAQSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.FAQ
+		fields = ["question", "answer", "category"]
+
+class TeamLeadSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.TeamLead
+		fields = ('name', 'position', 'image', 'team')
+
+class TeamMemberSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.TeamMember
+		fields = ('name', 'position', 'image', 'team')
+
+class TeamSerializer(serializers.ModelSerializer):
+	team_lead = TeamLeadSerializer
+	members = TeamMemberSerializer
+	class Meta:
+		model = models.Team
+		fields = ("id", "name", "team_lead", "members")
