@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'administrator'
 router = SimpleRouter()
+router.register("user", views.UserViewSet, basename='user')
 router.register("service", views.ServiceViewSet, basename='service')
 
 urlpatterns = router.urls
