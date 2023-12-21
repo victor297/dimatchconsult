@@ -72,16 +72,18 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:8000',
+    'https://dimatechconsult.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
+    'https://dimatechconsult.vercel.app',
 ]
 
 ROOT_URLCONF = 'itconsultant.urls'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',

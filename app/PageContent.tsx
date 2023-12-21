@@ -47,7 +47,7 @@ const PageContent = () => {
         </div>
         <div className="w-full lg:w-7/12 bg-opacity-70 inset-0 flex flex-col justify-center gap-6 text-start lg:p-16 sm:p-6 ">
           <div className="w-auto max-w-xs sm:max-w-sm lg:max-w-lg self-center sm:self-start ">
-            <p>welcom Dima</p>
+            <p>welcome Dima</p>
             <p className="text-start font-bold text-4xl py-2 text-ellipsis">
               {" "}
               We Care About Your Business Plan
