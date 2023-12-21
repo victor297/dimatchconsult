@@ -18,12 +18,12 @@ import twitterIcon from "@/public/icons/twitter.svg";
 import pintrestIcon from "@/public/icons/pintrest.svg";
 
 const Navbar = () => {
-  const [clicked, setClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const pathname = usePathname();
 
   const handleClick = () => {
-    setClicked(!clicked);
+    setIsClicked(!isClicked);
   };
 
   const menuItems = [
@@ -57,14 +57,18 @@ const Navbar = () => {
       name: "Contact Us",
       link: "/contact",
     },
+    {
+      id: 7,
+      name: "teams",
+      link: "/team",
+    },
   ];
 
   return (
-    // <header className="bg-darkGray py-2 w-full lg:px-12 lg:py-3 text-white">
-    <header className="">
+    <header>
       <div className="flex justify-end md:flex-none">
         <button
-          className="block sm:hidden transition py-4 px-5 sm:py-0"
+          className="block md:hidden transition py-4 px-5 md:py-0 cursor-pointer"
           onClick={handleClick}
         >
           <IconContext.Provider
@@ -81,35 +85,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      <div
-        className={`${
-          clicked
-            ? "block w-[100%] h-[100vh] bg-darkGray z-10 absolute top-0 transition ease-in-out delay-300 duration-300 "
-            : "hidden "
-        } md:block`}
-      >
-        <div className="flex justify-end md:flex-none">
-          <button
-            className="block sm:hidden transition py-4 px-5 sm:py-0 absolute top-0"
-            onClick={handleClick}
-          >
-            <IconContext.Provider
-              value={{
-                color: "white",
-                className: "global-class-name text-white text-lg",
-                size: "30",
-              }}
-            >
-              <div>
-                <IoClose />
-              </div>
-            </IconContext.Provider>
-          </button>
-        </div>
-
-        <div className="pt-32 pb-10 lg:pt-0 lg:pb-0 px-5 lg:px-0 lg:flex lg:justify-around bg-darkGray">
-          <div className="lg:flex lg:items-center lg:gap-20 p-2">
-            <div className="flex items-center justify-center lg:justify-start gap-2 lg:gap-3">
+      <div className="hidden md:block">
+        <div className="flex justify-around bg-darkGray">
+          <div className="flex items-center gap-20 p-2">
+            <div className="flex items-center gap-3">
               <div>
                 <Image
                   src={locationIcon}
@@ -122,7 +101,7 @@ const Navbar = () => {
                 <p>24 Olive Street, Prairie, NY 53590</p>
               </div>
             </div>
-            <div className="flex items-center justify-center lg:justify-end gap-2 lg:gap-3">
+            <div className="flex items-center justify-end gap-3">
               <Link href="">
                 <Image src={messageIcon} alt="message" width={18} height={17} />
               </Link>
@@ -134,8 +113,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-2 lg:gap-20">
-            <div className="flex items-center gap-2 lg:gap-3">
+          <div className="flex items-center gap-20">
+            <div className="flex items-center gap-3">
               <div>
                 <Image src={timeIcon} alt="time" width={18} height={17} />
               </div>
@@ -143,7 +122,7 @@ const Navbar = () => {
                 <p>Mon-Fri:8:00 am - 5:00 pm</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 lg:gap-3">
+            <div className="flex items-center gap-3">
               <Link href="">
                 <Image
                   src={instagramIcon}
@@ -174,30 +153,29 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="lg:flex lg:flex-row lg:items-center lg:justify-around">
-          <div className="absolute top-12 lg:relative lg:top-0 w-[100%] lg:w-auto m-auto mt-5 lg:m-0 p-4 lg:p-0">
-            <div className="  flex justify-center items-center gap-1 lg:gap-2">
+        <div className="flex flex-row items-center justify-around">
+          <div className="p-4">
+            <div className="flex justify-center items-center gap-2">
               <div>
                 <Image src={trenovaLogo} alt="logo" width={30} />
               </div>
               <div>
-                <h2 className="text-white lg:text-darkGray font-poppinsBold text-2xl">
+                <h2 className="text-darkGray font-poppinsBold text-2xl">
                   WhiteCo<span className="text-blue">ll</span>ar
                 </h2>
               </div>
             </div>
           </div>
-          <div className="w-auto flex flex-col gap-10 lg:gap-0 lg:flex-row items-center lg:justify-center">
-            <nav className="w-[80%] lg:w-auto text-center lg:text-base flex flex-col lg:flex-row lg:p-8 bg-white rounded-sm lg:rounded-none text-darkGray">
+          <div className="w-auto flex items-center justify-center">
+            <nav className="text-center text-base flex p-8 bg-white text-darkGray">
               {menuItems.map(({ id, name, link }) => (
                 <Link
                   key={id}
                   href={link}
-                  onClick={handleClick}
                   className={`${
                     pathname === link
-                      ? "bg-gray-100 font-interSemiBold font-bold text-darkGray py-2 lg:px-4 lg:py-2 rounded-t-lg"
-                      : "text-darkGray py-2 lg:px-4 lg:py-2 rounded-t-lg tracking-tight font-interRegular"
+                      ? "bg-gray-100 font-interSemiBold font-bold text-darkGray py-2 px-4  rounded-t-lg"
+                      : "text-darkGray py-2 px-4 rounded-t-lg tracking-tight font-interRegular"
                   }`}
                 >
                   {name}
@@ -212,6 +190,148 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      {isClicked && (
+        <div className="w-full h-[100vh] bg-darkGray z-10 absolute top-0 transition ease-in-out delay-300 duration-300 ">
+          <div className="flex justify-end">
+            <button
+              className="transition py-4 px-5 absolute top-0 cursor-pointer"
+              onClick={handleClick}
+            >
+              <IconContext.Provider
+                value={{
+                  color: "white",
+                  className: "global-class-name text-white text-lg",
+                  size: "30",
+                }}
+              >
+                <div>
+                  <IoClose />
+                </div>
+              </IconContext.Provider>
+            </button>
+          </div>
+
+          <div>
+            <div className="pt-32 pb-10 px-5 bg-darkGray">
+              <div>
+                <div className="flex items-center justify-center gap-2">
+                  <div>
+                    <Image
+                      src={locationIcon}
+                      alt="location"
+                      width={16}
+                      height={16}
+                    />
+                  </div>
+                  <div className=" text-white font-interRegular text-xs lg:text-sm tracking-wide">
+                    <p>24 Olive Street, Prairie, NY 53590</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center gap-2 mb-[2px]">
+                  <div>
+                    <Link href="">
+                      <Image
+                        src={messageIcon}
+                        alt="message"
+                        width={16}
+                        height={16}
+                      />
+                    </Link>
+                  </div>
+                  <div>
+                    <p className=" text-white font-interRegular text-xs lg:text-sm  tracking-wider">
+                      whitecollar@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <div>
+                    <Image src={timeIcon} alt="time" width={16} height={16} />
+                  </div>
+                  <div className=" text-white font-interRegular text-xs lg:text-sm tracking-wide">
+                    <p>Mon-Fri:8:00 am - 5:00 pm</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Link href="">
+                    <Image
+                      src={instagramIcon}
+                      alt="instagram"
+                      width={18}
+                      height={17}
+                    />
+                  </Link>
+                  <Link href="">
+                    <Image
+                      src={facebookIcon}
+                      alt="facebook"
+                      width={18}
+                      height={17}
+                    />
+                  </Link>
+                  <Link href="">
+                    <Image
+                      src={twitterIcon}
+                      alt="twitter"
+                      width={18}
+                      height={17}
+                    />
+                  </Link>
+                  <Link href="">
+                    <Image
+                      src={pintrestIcon}
+                      alt="pintrest"
+                      width={18}
+                      height={17}
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="absolute top-12 w-[100%] m-auto mt-5 p-4">
+                <div className="flex justify-center items-center gap-1">
+                  <div>
+                    <Image src={trenovaLogo} alt="logo" width={30} />
+                  </div>
+                  <div>
+                    <h2 className="text-white font-poppinsBold text-2xl">
+                      WhiteCo<span className="text-blue">ll</span>ar
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="w-auto flex flex-col gap-10  items-center">
+                <nav className="w-[70%] text-center flex flex-col bg-white rounded-sm  text-darkGray">
+                  {menuItems.map(({ id, name, link }) => (
+                    <Link
+                      key={id}
+                      href={link}
+                      onClick={handleClick}
+                      className={`${
+                        pathname === link
+                          ? "bg-gray-100 font-interSemiBold font-bold text-darkGray py-1  rounded-t-lg text:sm"
+                          : "text-darkGray py-1 rounded-t-lg tracking-tight font-interRegular text-sm"
+                      }`}
+                    >
+                      {name}
+                    </Link>
+                  ))}
+                </nav>
+                <div>
+                  <button className="bg-blue px-6 py-3 text-white font-cabinRegular text-[16px] tracking-wider rounded-sm hover:bg-lightBlue">
+                    Get Consulting
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

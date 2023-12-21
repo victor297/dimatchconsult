@@ -12,7 +12,7 @@ import pintrestIcon from "@/public/icons/pintrest.svg";
 
 const Footer = () => {
   return (
-    <footer className="py-6 bg-darkGray">
+    <footer className="py-10 lg:py-6 bg-darkGray">
       <div className="w-[70%] m-auto">
         <section className="lg:flex lg:justify-between">
           <div className="flex items-center justify-center lg:justify-start gap-2 -ml-10 lg:gap-1 lg:-ml-0">
@@ -28,39 +28,43 @@ const Footer = () => {
             <div className="flex flex-col gap-4 mt-5 md:flex-row md:mt-0 md:gap-20">
               <div className="flex items-center gap-2">
                 <div>
-                  <Image src={phoneIcon} alt="phone" width={50} />
+                  <Image src={phoneIcon} alt="phone" className="w-10 lg:w-12" />
                 </div>
                 <div>
-                  <h2 className="text-white text-sm font-poppinsBold font-bold tracking-widest">
+                  <h2 className="text-white text-sm  font-poppinsBold font-bold tracking-widest">
                     Call Us
                   </h2>
-                  <p className="text-white text-sm font-extralight mt-1 font-interRegular tracking-widest">
+                  <p className="text-white text-xs lg:text-sm font-extralight mt-1 font-interRegular tracking-widest">
                     +01 469 896 654
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Link href="">
-                  <Image src={messageIcon} alt="message" width={50} />
+                  <Image
+                    src={messageIcon}
+                    alt="message"
+                    className="w-10 lg:w-12"
+                  />
                 </Link>
                 <div>
                   <h2 className="text-white text-sm font-poppinsBold font-bold tracking-widest">
                     Mail Us
                   </h2>
-                  <p className="text-white text-sm font-extralight mt-1 font-interRegular tracking-widest">
+                  <p className="text-white text-xs lg:text-sm font-extralight mt-1 font-interRegular tracking-widest">
                     info@Example.com
                   </p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <div>
-                  <Image src={locationIcon} alt="" width={50} />
+                  <Image src={locationIcon} alt="" className="w-10 lg:w-12" />
                 </div>
                 <div>
                   <h2 className="text-white text-sm font-poppinsBold font-bold tracking-widest">
                     Location
                   </h2>
-                  <p className="text-white text-sm font-extralight mt-1 font-interRegular tracking-widest">
+                  <p className="text-white text-xs lg:text-sm font-extralight mt-1 font-interRegular tracking-widest">
                     Amsterdam, 109-74
                   </p>
                 </div>
@@ -72,42 +76,42 @@ const Footer = () => {
         <div className="border border-solid border-gray-600 my-6"></div>
 
         <section className="flex flex-col items-center lg:flex-row md:justify-between lg:items-left">
-          <div className=" flex flex-col gap-10  items-center lg:flex-row md:gap-20">
+          <div className=" flex flex-col gap-6  items-center lg:flex-row md:gap-20">
             <div>
               <div className="flex gap-2 items-center">
                 <div className="w-3 h-3 bg-blue"></div>
-                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-lg lg:text-sm">
+                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-sm">
                   Quick Link
                 </h2>
               </div>
-              <div className="flex flex-col items-center lg:items-baseline gap-3 mt-4">
+              <div className="flex flex-col items-center lg:items-baseline gap-2 lg:gap-3 mt-2 lg:mt-4">
                 <Link
                   href="/"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
-                  className="text-green text-sm font-interRegular tracking-widest font-light"
+                  className="text-green text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   About Us
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Blog
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white text-sm font-interRegular tracking-widest font-light "
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light "
                 >
                   Services
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Contact
                 </Link>
@@ -116,38 +120,38 @@ const Footer = () => {
             <div className="flex gap-2 flex-col items-center lg:items-baseline">
               <div className="flex gap-2 items-center">
                 <div className="w-3 h-3 bg-blue"></div>
-                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-lg lg:text-sm">
+                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-sm">
                   Our Services
                 </h2>
               </div>
-              <div className="flex flex-col items-center lg:items-baseline gap-3 mt-4">
+              <div className="flex flex-col items-center lg:items-baseline gap-2 lg:gap-3 mt-0 lg:mt-4">
                 <Link
                   href="/"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Financial Consulting
                 </Link>
                 <Link
                   href="/about"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Business Management
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Consultant & Programs
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Company Management
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Insurance & Finance
                 </Link>
@@ -156,39 +160,39 @@ const Footer = () => {
             <div>
               <div className="flex gap-2 items-center">
                 <div className="w-3 h-3 bg-blue"></div>
-                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-lg lg:text-sm">
+                <h2 className="text-green font-poppinsSemiBold font-bold tracking-widest text-sm">
                   Utility Page
                 </h2>
               </div>
 
-              <div className="flex flex-col items-center lg:items-baseline gap-3 mt-4">
+              <div className="flex flex-col items-center lg:items-baseline gap-2 lg:gap-3 mt-2 lg:mt-4">
                 <Link
                   href="/"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Style guide
                 </Link>
                 <Link
                   href="/about"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm  font-interRegular tracking-widest font-light"
                 >
                   Licenses
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Instructions
                 </Link>
                 <Link
                   href="/services"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm font-interRegular tracking-widest font-light"
                 >
                   Changelog
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-white text-sm font-interRegular tracking-widest font-light"
+                  className="text-white text-xs lg:text-sm  font-interRegular tracking-widest font-light"
                 >
                   404 Page
                 </Link>
@@ -198,12 +202,12 @@ const Footer = () => {
 
           <div className="bg-gray-700 p-10 mt-8 lg:mt-0">
             <div className="text-center md:text-left">
-              <h2 className="text-white font-semibold tracking-widest text-xl md:text-lg">
+              <h2 className="text-white font-semibold tracking-widest text-lg">
                 Subscribe
               </h2>
             </div>
             <div className="text-center md:text-left">
-              <p className="text-white font-extralight tracking-wider text-sm mt-3 mb-5">
+              <p className="text-white font-extralight tracking-wider text-xs mt-3 mb-5">
                 Join Our Mailing List to get our news
               </p>
             </div>
@@ -213,13 +217,13 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="your email address"
-                    className="flex-1 md:w-[100%] p-2 text-sm lg:p-4 lg:text-base"
+                    className="flex-1 md:w-[100%] p-2 text-xs lg:p-4 lg:text-base"
                   />
                 </div>
                 <div>
                   <button
                     role="submit"
-                    className="rounded-sm lg:rounded-none py-2 px-4 lg:p-4 text-center text-white font-light lg:text-base tracking-widest bg-blue"
+                    className="rounded-sm lg:rounded-none py-2 px-4 lg:p-4 text-center text-white font-light text-sm lg:text-base tracking-widest bg-blue"
                   >
                     Subscribe
                   </button>
@@ -231,51 +235,51 @@ const Footer = () => {
 
         <div className="border border-solid border-gray-600 my-6"></div>
 
-        <section className="flex flex-col items-center md:flex-row md:justify-between">
+        <div className="flex flex-col items-center md:flex-row md:justify-between">
           <div className="flex flex-col lg:flex-row">
-            <div className="md:flex md:items-center md:gap-2">
-              <span className="text-white text-sm font-interRegular font-light">
+            <div className="md:flex md:items-center md:gap-2 leading-tight lg:leading-normal">
+              <span className="text-white text-xs lg:text-sm font-interRegular font-light">
                 Copyright
               </span>
-              <span className="text-white mx-1 text-sm font-interRegular">
+              <span className="text-white mx-1 text-xs lg:text-sm font-interRegular">
                 &copy;
               </span>
               <Link
                 href=""
-                className="text-green text-sm font-interRegular font-light"
+                className="text-green text-xs lg:text-sm font-interRegular font-light"
               >
                 WhiteCollar
               </Link>
               <span className="text-white mx-1">|</span>
-              <span className="text-white text-sm font-interRegular font-light">
+              <span className="text-white text-xs lg:text-sm font-interRegular font-light">
                 Designed by
               </span>
             </div>
             <div>
               <Link
                 href=""
-                className="text-blue text-sm font-interRegular font-light px-2"
+                className="text-blue text-xs lg:text-sm  font-interRegular font-light px-2"
               >
                 VictorFlow
               </Link>
-              <span className="text-white text-sm font-interRegular font-light">
+              <span className="text-white text-xs lg:text-sm font-interRegular font-light">
                 Powered by - Webflow
               </span>
             </div>
           </div>
 
           <div className="flex gap-3 items-center">
-            <h3 className="text-white text-sm font-poppinsBold font-bold tracking-widest">
+            <h3 className="text-white text-xs lg:text-sm font-poppinsBold font-bold tracking-widest">
               Follow:
             </h3>
             <div className="flex gap-3 items-center">
-              <Image src={instagramIcon} alt="instagram" width={16} />
-              <Image src={facebookIcon} alt="facebook" width={16} />
-              <Image src={twitterIcon} alt="twitter" width={16} />
-              <Image src={pintrestIcon} alt="pintrest" width={16} />
+              <Image src={instagramIcon} alt="instagram" width={15} />
+              <Image src={facebookIcon} alt="facebook" width={15} />
+              <Image src={twitterIcon} alt="twitter" width={15} />
+              <Image src={pintrestIcon} alt="pintrest" width={15} />
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </footer>
   );

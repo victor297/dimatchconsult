@@ -1,5 +1,11 @@
+import TeamsContent from "./TeamsContent";
+
 const Team = () => {
-  return <div>Team</div>;
+  return (
+    <div>
+      <TeamsContent />
+    </div>
+  );
 };
 
 export default Team;
