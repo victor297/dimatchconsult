@@ -73,11 +73,13 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:8000',
     'https://dimatechconsult.vercel.app',
+    'https://dimatchconsult.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'https://dimatechconsult.vercel.app',
+    'https://dimatchconsult.vercel.app',
 ]
 
 ROOT_URLCONF = 'itconsultant.urls'
