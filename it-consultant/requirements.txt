@@ -13,12 +13,14 @@ django-filter==23.5
 django-jazzmin==2.6.0
 djangorestframework==3.14.0
 drf-spectacular==0.27.0
+gunicorn==21.2.0
 idna==3.6
 inflection==0.5.1
 jsonschema==4.20.0
 jsonschema-specifications==2023.11.2
 Markdown==3.5.1
 oauthlib==3.2.2
+packaging==23.2
 pycparser==2.21
 PyJWT==2.8.0
 python3-openid==3.2.0
