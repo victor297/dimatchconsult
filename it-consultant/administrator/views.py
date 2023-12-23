@@ -1,13 +1,22 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.http import HttpResponse
-from rest_framework import generics, permissions, viewsets
+from rest_framework import generics, permissions, viewsets, response, decorators
 import json
 from . import models
 from . import serializers
 # Create your views here.
 
 default_permissions = [permissions.IsAdminUser, permissions.IsAuthenticated]
+
+@decorators.api_view(["GET"])
+def custom_func_view(request):
+	return response.Response({"return": "Hello World \n"})
+
+class FAQCategoryViewSet(viewsets.ModelViewSet):
+	queryset = models.FAQCategory.objects.all()
+	serializer_class = serializers.FAQCategorySerializer
+	permission_classes = default_permissions
 
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = get_user_model().objects.all()

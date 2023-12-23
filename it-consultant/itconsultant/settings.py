@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     # Installed Apps
     'administrator.apps.AdministratorConfig',
+    'utils.apps.UtilsConfig',
 ]
 
 MIDDLEWARE = [

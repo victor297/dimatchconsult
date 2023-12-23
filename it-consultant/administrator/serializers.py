@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-
 from . import models
 
 
@@ -23,7 +22,7 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 		fields = [
 			"title", "heading1", "content1", "heading2",
 			"content2", "heading3", "content3", "subheading",
-			"image", "written_on", "list_content"
+			"image", "written_on", "list_content",
 		]
 
 
