@@ -43,13 +43,13 @@ class ListContent(models.Model):
 		return f"{self.description}"
 
 class FAQCategory(models.Model):
-	name = models.CharField(max_length=80)
+	name = models.CharField(max_length=80, unique=True)
 
 class FAQ(models.Model):
 	"""\
 		The frequently asked question model
 	"""
-	question = models.CharField(max_length=150)
+	question = models.CharField(max_length=150, unique=True)
 	answer = models.TextField()
 	category = models.ForeignKey(FAQCategory, related_name='items', on_delete=models.CASCADE)
 
