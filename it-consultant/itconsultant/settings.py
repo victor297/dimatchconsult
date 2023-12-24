@@ -70,18 +70,21 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://localhost:8000',
-    'https://dimatechconsult.vercel.app',
-    'https://dimatchconsult.vercel.app',
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',
+#     'http://localhost:8000',
+#     'https://dimatechconsult.vercel.app',
+#     'https://dimatchconsult.vercel.app',
+# ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'https://dimatechconsult.vercel.app',
-    'https://dimatchconsult.vercel.app',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://localhost:3000',
+#     'https://dimatechconsult.vercel.app',
+#     'https://dimatchconsult.vercel.app',
+# ]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'itconsultant.urls'
 REST_FRAMEWORK = {
@@ -89,13 +92,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        'administrator.authentications.ExemptSessionCsrfAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -113,7 +117,13 @@ TEMPLATES = [
     },
 ]
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = os.getenv("email_host")
+EMAIL_HOST_USER = os.getenv("email")
+EMAIL_HOST_PASSWORD = os.getenv("e_pass")
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "no-reply@itconsultant.com"
+
 SITE_ID = 1
 
 WSGI_APPLICATION = 'itconsultant.wsgi.application'
@@ -124,12 +134,14 @@ WSGI_APPLICATION = 'itconsultant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': os.getenv("DJANGO_DATABASE_ENGINE"),
+        'PASSWORD': os.getenv("DJANGO_DATABASE_PASS"),
+        'NAME': os.getenv("DJANGO_DATABASE_NAME"),
+        'USER': os.getenv("DJANGO_DATABASE_USER"),
+        'HOST': os.getenv("DJANGO_DATABASE_HOST"),
+        'PORT': os.getenv("DJANGO_DATABASE_PORT"),
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
