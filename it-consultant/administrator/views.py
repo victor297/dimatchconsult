@@ -18,6 +18,10 @@ class FAQCategoryViewSet(viewsets.ModelViewSet):
 	serializer_class = serializers.FAQCategorySerializer
 	permission_classes = default_permissions
 
+class FAQViewSet(viewsets.ModelViewSet):
+	queryset = models.FAQ.objects.all()
+	serializer_class = serializers.FAQSerializer
+
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = get_user_model().objects.all()
 	serializer_class = serializers.UserSerializer
