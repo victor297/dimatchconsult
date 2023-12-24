@@ -42,6 +42,7 @@ class FAQCategorySerializer(serializers.ModelSerializer):
 		ordering = ["-name"]
 
 class FAQSerializer(serializers.ModelSerializer):
+	category = serializers.StringRelatedField(many=False)
 	class Meta:
 		model = models.FAQ
 		fields = ["question", "answer", "category"]
