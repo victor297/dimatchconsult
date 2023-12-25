@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.http import HttpResponse
-from rest_framework import generics, permissions, viewsets, response, decorators
+from rest_framework import (generics, permissions,
+		viewsets, response, decorators, views)
 import json
 from . import models
 from . import serializers
@@ -14,6 +15,12 @@ from . import serializers
 """
 
 default_permissions = [permissions.IsAdminUser, permissions.IsAuthenticated]
+
+
+# class MyLoginView(views.LoginView):
+# 	def get_response(self, response):
+# 		return response
+
 
 @decorators.api_view(["GET"])
 @decorators.permission_classes(default_permissions)

@@ -186,6 +186,7 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Api\'s For Dimatech Consultant Site',
     'VERSION': '1.0.0',
 }
+
 JAZZMIN_SETTINGS = {
     'site_title': 'Dimatech IT Consultant',
     'site_header': 'IT Consultant',
