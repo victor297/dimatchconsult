@@ -7,14 +7,14 @@ class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = get_user_model()
 		fields = [
-			"username", "email", "password",
+			"username", "email", "password", 'id'
 		]
 		ordering = ["-id"]
 
 class ClientSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.Client
-		fields = ('full_name', 'email', 'created_on')
+		fields = ('full_name', 'email', 'created_on', 'id')
 		ordering = ["-id"]
 
 class RequestServiceSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 		fields = [
 			"title", "heading1", "content1", "heading2",
 			"content2", "heading3", "content3", "subheading",
-			"image", "written_on", "list_content",
+			"image", "written_on", "list_content", "id"
 		]
 		ordering = ["-written_on"]
 
@@ -32,32 +32,32 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.ListContent
-		fields = ('description', 'service')
+		fields = ('description', 'service', 'id')
 		ordering = ["-id"]
 
 class FAQCategorySerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.FAQCategory
-		fields = ("name",)
+		fields = ("name", 'id')
 		ordering = ["-name"]
 
 class FAQSerializer(serializers.ModelSerializer):
 	category = serializers.StringRelatedField(many=False)
 	class Meta:
 		model = models.FAQ
-		fields = ["question", "answer", "category"]
+		fields = ["question", "answer", "category", 'id']
 		ordering = ["-id"]
 
 class TeamLeadSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.TeamLead
-		fields = ('name', 'position', 'image', 'team')
+		fields = ('name', 'position', 'image', 'team', 'id')
 		ordering = ["-name"]
 
 class TeamMemberSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.TeamMember
-		fields = ('name', 'position', 'image', 'team')
+		fields = ('name', 'position', 'image', 'team', 'id')
 		ordering = ["-name"]
 
 class TeamSerializer(serializers.ModelSerializer):
