@@ -190,7 +190,7 @@ class ListTeamAPIView(generics.ListAPIView):
 	serializer_class = serializers.TeamSerializer
 	permission_classes = ALLOW_ANY
 
-class CreateTeamAPIView(generics.CreateAPIView, TeamMixin):
+class CreateTeamAPIView(generics.CreateAPIView):
 	"""
 		Create Team Name API View
 	"""
