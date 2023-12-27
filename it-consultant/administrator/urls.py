@@ -27,6 +27,12 @@ urlpatterns = [
     path('rud-team-member/<int:pk>/', views.RUDTeamMemberAPIView.as_view(), name='team-member-rud'),
     path('list-teams/', views.ListTeamAPIView.as_view(), name='team-list'),
     path('rud-team/<int:pk>/', views.RUDTeamAPIView.as_view(), name='team-rud'),
+    path('create-service/', views.CreateServiceAPIView.as_view(), name='create-service'),
+    path('create-team-member/', views.CreateTeamMemberAPIView.as_view(), name='create-team-member'),
+    path('create-team-leader/', views.CreateTeamLeadAPIView.as_view(), name='create-team-leader'),
+    path('create-team/', views.CreateTeamAPIView.as_view(), name='create-team'),
+    path('create-faq-category/', views.CreateFAQCategoryAPIView.as_view(), name='create-faq-category'),
+    path('create-faq/', views.CreateFAQAPIView.as_view(), name='create-faq'),
 ]
 
 urlpatterns += router.urls

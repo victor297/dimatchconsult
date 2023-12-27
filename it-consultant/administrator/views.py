@@ -38,13 +38,19 @@ class CreateFAQCategoryAPIView(generics.CreateAPIView):
 	"""
 		Creates the frequently asked question view
 	"""
+	queryset = models.FAQCategory.objects.all()
+	serializer_class = serializers.FAQCategorySerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy/Delete
 		FAQ category view
 	"""
-
+	queryset = models.FAQCategory.objects.all()
+	serializer_class = serializers.FAQCategorySerializer
+	permission_classes = DEFAULT_PERMISSIONS
+	
 # class FAQCategoryViewSet(viewsets.ModelViewSet):
 # 	queryset = models.FAQCategory.objects.all()
 # 	serializer_class = serializers.FAQCategorySerializer

@@ -1,6 +1,6 @@
-from rest_framework.authentication import SessionAuthentication
+from rest_framework.authentication import SessionAuthentication as SA
 
-class ExemptSessionCsrfAuthentication(SessionAuthentication):
+class SessionAuthentication(SA):
 	"""
 		This class was created to exempt csrf validation
 	"""
