@@ -26,7 +26,7 @@ ALLOW_ANY = [permissions.AllowAny]
 def custom_func_view(request):
 	return response.Response({"return": "Hello World \n"})
 
-class ListFAQCategoryAPIView(generics.ListAPIView, FAQCategoryMixin):
+class ListFAQCategoryAPIView(generics.ListAPIView):
 	"""
 		List View for list FAQ category
 	"""
@@ -34,12 +34,12 @@ class ListFAQCategoryAPIView(generics.ListAPIView, FAQCategoryMixin):
 	serializer_class = serializers.FAQCategorySerializer
 	permission_classes = ALLOW_ANY
 
-class CreateFAQCategoryAPIView(generics.CreateAPIView, FAQCategoryMixin):
+class CreateFAQCategoryAPIView(generics.CreateAPIView):
 	"""
 		Creates the frequently asked question view
 	"""
 
-class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView, FAQCategoryMixin):
+class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy/Delete
 		FAQ category view
@@ -50,7 +50,7 @@ class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView, FAQCategoryMi
 # 	serializer_class = serializers.FAQCategorySerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class ListFAQAPIView(generics.ListAPIView, FAQMixin):
+class ListFAQAPIView(generics.ListAPIView):
 	"""
 		List the FAQ view
 	"""
@@ -58,7 +58,7 @@ class ListFAQAPIView(generics.ListAPIView, FAQMixin):
 	serializer_class = serializers.FAQSerializer
 	permission_classes = ALLOW_ANY
 
-class CreateFAQAPIView(generics.CreateAPIView, FAQMixin):
+class CreateFAQAPIView(generics.CreateAPIView):
 	"""
 		Creates API Frequently Asked Question
 	"""
@@ -66,7 +66,7 @@ class CreateFAQAPIView(generics.CreateAPIView, FAQMixin):
 	serializer_class = serializers.FAQSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
-class RUDFAQAPIView(generics.RetrieveUpdateDestroyAPIView, FAQMixin):
+class RUDFAQAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy the 
 		FAQ view
@@ -89,7 +89,7 @@ class UserViewSet(viewsets.ModelViewSet):
 # 	serializer_class = serializers.RequestServiceSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class ListServiceAPIView(generics.ListAPIView, ServiceMixin):
+class ListServiceAPIView(generics.ListAPIView):
 	"""
 		List Servie API View
 	"""
@@ -97,7 +97,7 @@ class ListServiceAPIView(generics.ListAPIView, ServiceMixin):
 	serializer_class = serializers.RequestServiceSerializer
 	permission_classes = ALLOW_ANY
 
-class CreateServiceAPIView(generics.CreateAPIView, ServiceMixin):
+class CreateServiceAPIView(generics.CreateAPIView):
 	"""
 		Creates The Service View
 	"""
@@ -105,7 +105,7 @@ class CreateServiceAPIView(generics.CreateAPIView, ServiceMixin):
 	serializer_class = serializers.RequestServiceSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
-class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView, ServiceMixin):
+class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy
 		Request Service View
@@ -120,7 +120,7 @@ class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView, ServiceMixin):
 # 	serializer_class = serializers.TeamLeadSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class ListTeamLeadAPIView(generics.ListAPIView, TeamLeadMixin):
+class ListTeamLeadAPIView(generics.ListAPIView):
 	"""
 		List all team leads api view
 	"""
@@ -128,7 +128,7 @@ class ListTeamLeadAPIView(generics.ListAPIView, TeamLeadMixin):
 	serializer_class = serializers.TeamLeadSerializer
 	permission_classes = ALLOW_ANY
 
-class CreateTeamLeadAPIView(generics.CreateAPIView, ServiceMixin):
+class CreateTeamLeadAPIView(generics.CreateAPIView):
 	"""
 		Creates The team leader for a particaular team
 	"""
@@ -136,7 +136,7 @@ class CreateTeamLeadAPIView(generics.CreateAPIView, ServiceMixin):
 	serializer_class = serializers.TeamLeadSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
-class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView, TeamLeadMixin):
+class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy/Delete
 		Team Lead Api View
@@ -150,7 +150,7 @@ class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView, TeamLeadMixin):
 # 	serializer_class = serializers.TeamMemberSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class ListTeamMemberAPIView(generics.ListAPIView, TeamMemberMixin):
+class ListTeamMemberAPIView(generics.ListAPIView):
 	"""
 		List Team Members API View
 	"""
@@ -158,7 +158,7 @@ class ListTeamMemberAPIView(generics.ListAPIView, TeamMemberMixin):
 	serializer_class = serializers.TeamMemberSerializer
 	permission_classes = ALLOW_ANY
 
-class CreateTeamMemberAPIView(generics.CreateAPIView, TeamMemberMixin):
+class CreateTeamMemberAPIView(generics.CreateAPIView):
 	"""
 		Creates a team member for a particular group
 	"""
@@ -167,7 +167,7 @@ class CreateTeamMemberAPIView(generics.CreateAPIView, TeamMemberMixin):
 	permission_classes = DEFAULT_PERMISSIONS
 
 
-class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMemberMixin):
+class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy/Delete
 		Team Member API View
@@ -182,7 +182,7 @@ class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMemberMixi
 # 	permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
-class ListTeamAPIView(generics.ListAPIView, TeamMixin):
+class ListTeamAPIView(generics.ListAPIView):
 	"""
 		List the Team API View
 	"""
@@ -198,7 +198,7 @@ class CreateTeamAPIView(generics.CreateAPIView, TeamMixin):
 	serializer_class = serializers.TeamSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
-class RUDTeamAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMixin):
+class RUDTeamAPIView(generics.RetrieveUpdateDestroyAPIView):
 	"""
 		Retrieve Update Destroy/Delete
 		The teams API
