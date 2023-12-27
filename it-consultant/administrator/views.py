@@ -39,7 +39,7 @@ class CreateFAQCategoryAPIView(generics.CreateAPIView):
 		Creates the frequently asked question view
 	"""
 	queryset = models.FAQCategory.objects.all()
-	serializer_class = serializers.FAQCategorySerializer
+	serializer_class = serializers.CreateFAQCategorySerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -48,9 +48,9 @@ class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView):
 		FAQ category view
 	"""
 	queryset = models.FAQCategory.objects.all()
-	serializer_class = serializers.FAQCategorySerializer
+	serializer_class = serializers.CreateFAQCategorySerializer
 	permission_classes = DEFAULT_PERMISSIONS
-	
+
 # class FAQCategoryViewSet(viewsets.ModelViewSet):
 # 	queryset = models.FAQCategory.objects.all()
 # 	serializer_class = serializers.FAQCategorySerializer
@@ -69,7 +69,7 @@ class CreateFAQAPIView(generics.CreateAPIView):
 		Creates API Frequently Asked Question
 	"""
 	queryset = models.FAQ.objects.all()
-	serializer_class = serializers.FAQSerializer
+	serializer_class = serializers.CreateFAQSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDFAQAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -78,7 +78,7 @@ class RUDFAQAPIView(generics.RetrieveUpdateDestroyAPIView):
 		FAQ view
 	"""
 	queryset = models.FAQ.objects.all()
-	serializer_class = serializers.FAQSerializer
+	serializer_class = serializers.CreateFAQSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 # class FAQViewSet(viewsets.ModelViewSet):
@@ -108,7 +108,7 @@ class CreateServiceAPIView(generics.CreateAPIView):
 		Creates The Service View
 	"""
 	queryset = models.RequestService.objects.all()
-	serializer_class = serializers.RequestServiceSerializer
+	serializer_class = serializers.CreateServiceSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -117,7 +117,7 @@ class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView):
 		Request Service View
 	"""
 	queryset = models.RequestService.objects.all()
-	serializer_class = serializers.RequestServiceSerializer
+	serializer_class = serializers.CreateServiceSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 
@@ -139,7 +139,7 @@ class CreateTeamLeadAPIView(generics.CreateAPIView):
 		Creates The team leader for a particaular team
 	"""
 	queryset = models.TeamLead.objects.all()
-	serializer_class = serializers.TeamLeadSerializer
+	serializer_class = serializers.CreateTeamLeadSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -148,7 +148,7 @@ class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView):
 		Team Lead Api View
 	"""
 	queryset = models.TeamLead.objects.all()
-	serializer_class = serializers.TeamLeadSerializer
+	serializer_class = serializers.CreateTeamLeadSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 # class TeamMemberViewSet(viewsets.ModelViewSet):
@@ -169,7 +169,7 @@ class CreateTeamMemberAPIView(generics.CreateAPIView):
 		Creates a team member for a particular group
 	"""
 	queryset = models.TeamMember.objects.all()
-	serializer_class = serializers.TeamMemberSerializer
+	serializer_class = serializers.CreateTeamMemberSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 
@@ -179,7 +179,7 @@ class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView):
 		Team Member API View
 	"""
 	queryset = models.TeamMember.objects.all()
-	serializer_class = serializers.TeamMemberSerializer
+	serializer_class = serializers.CreateTeamMemberSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 # class TeamViewSet(viewsets.ModelViewSet):
@@ -201,7 +201,7 @@ class CreateTeamAPIView(generics.CreateAPIView):
 		Create Team Name API View
 	"""
 	queryset = models.Team.objects.all()
-	serializer_class = serializers.TeamSerializer
+	serializer_class = serializers.CreateTeamSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDTeamAPIView(generics.RetrieveUpdateDestroyAPIView):
@@ -210,7 +210,7 @@ class RUDTeamAPIView(generics.RetrieveUpdateDestroyAPIView):
 		The teams API
 	"""
 	queryset = models.Team.objects.all()
-	serializer_class = serializers.TeamSerializer
+	serializer_class = serializers.CreateTeamSerializer
 	permission_classes = DEFAULT_PERMISSIONS
 
 class ListContentCreateAPIView(generics.CreateAPIView):

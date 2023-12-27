@@ -11,6 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 		]
 		ordering = ["-id"]
 
+
 class ClientSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.Client
@@ -28,6 +29,15 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 		]
 		ordering = ["-written_on"]
 
+class CreateServiceSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.RequestService
+		fields = [
+			"title", "heading1", "content1", "heading2",
+			"content2", "heading3", "content3", "subheading",
+			"image", "written_on"
+		]
+		ordering = ["-written_on"]
 
 class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -41,11 +51,23 @@ class FAQCategorySerializer(serializers.ModelSerializer):
 		fields = ("name", 'id')
 		ordering = ["-name"]
 
+class CreateFAQCategorySerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.FAQCategory
+		fields = ("name",)
+		ordering = ["-name"]
+
 class FAQSerializer(serializers.ModelSerializer):
 	category = serializers.StringRelatedField(many=False)
 	class Meta:
 		model = models.FAQ
 		fields = ["question", "answer", "category", 'id']
+		ordering = ["-id"]
+
+class CreateFAQSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.FAQ
+		fields = ["question", "answer", "category"]
 		ordering = ["-id"]
 
 class TeamLeadSerializer(serializers.ModelSerializer):
@@ -54,10 +76,23 @@ class TeamLeadSerializer(serializers.ModelSerializer):
 		fields = ('name', 'position', 'image', 'team', 'id')
 		ordering = ["-name"]
 
+class CreateTeamLeadSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.TeamLead
+		fields = ('name', 'position', 'image', 'team',)
+		ordering = ["-name"]
+
+
 class TeamMemberSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.TeamMember
 		fields = ('name', 'position', 'image', 'team', 'id')
+		ordering = ["-name"]
+
+class CreateTeamMemberSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.TeamMember
+		fields = ('name', 'position', 'image', 'team')
 		ordering = ["-name"]
 
 class TeamSerializer(serializers.ModelSerializer):
@@ -66,4 +101,10 @@ class TeamSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.Team
 		fields = ("id", "name", "team_lead", "members")
+		ordering = ["-id"]
+
+class CreateTeamSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.Team
+		fields = ("name", "team_lead", "members")
 		ordering = ["-id"]
