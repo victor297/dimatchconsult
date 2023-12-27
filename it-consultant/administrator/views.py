@@ -26,19 +26,12 @@ ALLOW_ANY = [permissions.AllowAny]
 def custom_func_view(request):
 	return response.Response({"return": "Hello World \n"})
 
-# Note: Every mixin class created is to reduce the need of rewriting 
-# an attribute/method of the subclass
-
-class FAQCategoryMixin:
-	queryset = models.FAQCategory.objects.all()
-	serializer_class = serializers.FAQCategorySerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
-
 class ListFAQCategoryAPIView(generics.ListAPIView, FAQCategoryMixin):
 	"""
 		List View for list FAQ category
 	"""
+	queryset = models.FAQCategory.objects.all()
+	serializer_class = serializers.FAQCategorySerializer
 	permission_classes = ALLOW_ANY
 
 class CreateFAQCategoryAPIView(generics.CreateAPIView, FAQCategoryMixin):
@@ -57,27 +50,30 @@ class RUDFAQCategoryAPIView(generics.RetrieveUpdateDestroyAPIView, FAQCategoryMi
 # 	serializer_class = serializers.FAQCategorySerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class FAQMixin:
-	queryset = models.FAQ.objects.all()
-	serializer_class = serializers.FAQSerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
 class ListFAQAPIView(generics.ListAPIView, FAQMixin):
 	"""
 		List the FAQ view
 	"""
+	queryset = models.FAQ.objects.all()
+	serializer_class = serializers.FAQSerializer
 	permission_classes = ALLOW_ANY
 
 class CreateFAQAPIView(generics.CreateAPIView, FAQMixin):
 	"""
 		Creates API Frequently Asked Question
 	"""
+	queryset = models.FAQ.objects.all()
+	serializer_class = serializers.FAQSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDFAQAPIView(generics.RetrieveUpdateDestroyAPIView, FAQMixin):
 	"""
 		Retrieve Update Destroy the 
 		FAQ view
 	"""
+	queryset = models.FAQ.objects.all()
+	serializer_class = serializers.FAQSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 # class FAQViewSet(viewsets.ModelViewSet):
 # 	queryset = models.FAQ.objects.all()
@@ -93,27 +89,30 @@ class UserViewSet(viewsets.ModelViewSet):
 # 	serializer_class = serializers.RequestServiceSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class ServiceMixin:
-	queryset = models.RequestService.objects.all()
-	serializer_class = serializers.RequestServiceSerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
 class ListServiceAPIView(generics.ListAPIView, ServiceMixin):
 	"""
 		List Servie API View
 	"""
+	queryset = models.RequestService.objects.all()
+	serializer_class = serializers.RequestServiceSerializer
 	permission_classes = ALLOW_ANY
 
 class CreateServiceAPIView(generics.CreateAPIView, ServiceMixin):
 	"""
 		Creates The Service View
 	"""
+	queryset = models.RequestService.objects.all()
+	serializer_class = serializers.RequestServiceSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView, ServiceMixin):
 	"""
 		Retrieve Update Destroy
 		Request Service View
 	"""
+	queryset = models.RequestService.objects.all()
+	serializer_class = serializers.RequestServiceSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 
 # class TeamLeadViewSet(viewsets.ModelViewSet):
@@ -121,48 +120,51 @@ class RUDServiceAPIView(generics.RetrieveUpdateDestroyAPIView, ServiceMixin):
 # 	serializer_class = serializers.TeamLeadSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class TeamLeadMixin:
-	queryset = models.TeamLead.objects.all()
-	serializer_class = serializers.TeamLeadSerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
 class ListTeamLeadAPIView(generics.ListAPIView, TeamLeadMixin):
 	"""
 		List all team leads api view
 	"""
+	queryset = models.TeamLead.objects.all()
+	serializer_class = serializers.TeamLeadSerializer
 	permission_classes = ALLOW_ANY
 
 class CreateTeamLeadAPIView(generics.CreateAPIView, ServiceMixin):
 	"""
 		Creates The team leader for a particaular team
 	"""
+	queryset = models.TeamLead.objects.all()
+	serializer_class = serializers.TeamLeadSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDTeamLeadAPIView(generics.RetrieveUpdateDestroyAPIView, TeamLeadMixin):
 	"""
 		Retrieve Update Destroy/Delete
 		Team Lead Api View
 	"""
+	queryset = models.TeamLead.objects.all()
+	serializer_class = serializers.TeamLeadSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 # class TeamMemberViewSet(viewsets.ModelViewSet):
 # 	queryset = models.TeamMember.objects.all()
 # 	serializer_class = serializers.TeamMemberSerializer
 # 	permission_classes = DEFAULT_PERMISSIONS
 
-class TeamMemberMixin:
-	queryset = models.TeamMember.objects.all()
-	serializer_class = serializers.TeamMemberSerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
 class ListTeamMemberAPIView(generics.ListAPIView, TeamMemberMixin):
 	"""
 		List Team Members API View
 	"""
+	queryset = models.TeamMember.objects.all()
+	serializer_class = serializers.TeamMemberSerializer
 	permission_classes = ALLOW_ANY
 
 class CreateTeamMemberAPIView(generics.CreateAPIView, TeamMemberMixin):
 	"""
 		Creates a team member for a particular group
 	"""
+	queryset = models.TeamMember.objects.all()
+	serializer_class = serializers.TeamMemberSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 
 class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMemberMixin):
@@ -170,33 +172,40 @@ class RUDTeamMemberAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMemberMixi
 		Retrieve Update Destroy/Delete
 		Team Member API View
 	"""
+	queryset = models.TeamMember.objects.all()
+	serializer_class = serializers.TeamMemberSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 # class TeamViewSet(viewsets.ModelViewSet):
 # 	queryset = models.Team.objects.all()
 # 	serializer_class = serializers.TeamSerializer
 # 	permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
-class TeamMixin:
-	queryset = models.Team.objects.all()
-	serializer_class = serializers.TeamSerializer
-	permission_classes = DEFAULT_PERMISSIONS
-
 
 class ListTeamAPIView(generics.ListAPIView, TeamMixin):
 	"""
 		List the Team API View
 	"""
-	default_permissions = ALLOW_ANY
+	queryset = models.Team.objects.all()
+	serializer_class = serializers.TeamSerializer
+	permission_classes = ALLOW_ANY
+
 class CreateTeamAPIView(generics.CreateAPIView, TeamMixin):
 	"""
 		Create Team Name API View
 	"""
+	queryset = models.Team.objects.all()
+	serializer_class = serializers.TeamSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class RUDTeamAPIView(generics.RetrieveUpdateDestroyAPIView, TeamMixin):
 	"""
 		Retrieve Update Destroy/Delete
 		The teams API
 	"""
+	queryset = models.Team.objects.all()
+	serializer_class = serializers.TeamSerializer
+	permission_classes = DEFAULT_PERMISSIONS
 
 class ListContentCreateAPIView(generics.CreateAPIView):
 	"""
