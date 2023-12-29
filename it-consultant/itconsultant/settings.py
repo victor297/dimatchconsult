@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,9 +142,9 @@ WSGI_APPLICATION = 'itconsultant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': os.getenv('DJANGO_DATABASE_ENGINE'),
         'PASSWORD': os.getenv("DJANGO_DATABASE_PASS"),
-        'NAME': BASE_DIR/'db.sqlite3',
+        'NAME': os.getenv('DJANGO_DATABASE_NAME'),
         'USER': os.getenv("DJANGO_DATABASE_USER"),
         'HOST': os.getenv("DJANGO_DATABASE_HOST"),
         'PORT': os.getenv("DJANGO_DATABASE_PORT"),
