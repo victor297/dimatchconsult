@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os
 
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -92,12 +93,19 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'administrator.authentications.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
 }
 
 TEMPLATES = [
@@ -134,9 +142,9 @@ WSGI_APPLICATION = 'itconsultant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv("DJANGO_DATABASE_ENGINE"),
+        'ENGINE': 'django.db.backends.sqlite3',
         'PASSWORD': os.getenv("DJANGO_DATABASE_PASS"),
-        'NAME': os.getenv("DJANGO_DATABASE_NAME"),
+        'NAME': BASE_DIR/'db.sqlite3',
         'USER': os.getenv("DJANGO_DATABASE_USER"),
         'HOST': os.getenv("DJANGO_DATABASE_HOST"),
         'PORT': os.getenv("DJANGO_DATABASE_PORT"),

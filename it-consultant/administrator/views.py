@@ -1,5 +1,7 @@
+from django.core.paginator import Paginator
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
+from django.conf import settings
 from django.http import HttpResponse
 from rest_framework import (generics, permissions,
 		viewsets, response, decorators, views)
@@ -24,7 +26,11 @@ ALLOW_ANY = [permissions.AllowAny]
 @decorators.api_view(["GET"])
 @decorators.permission_classes(DEFAULT_PERMISSIONS)
 def custom_func_view(request):
-	return response.Response({"return": "Hello World \n"})
+	paginated_service = Paginator(models.RequestService.objects.all(),
+		settings.REST_FRAMEWORK['PAGE_SIZE'])
+	print(paginated_service.count)
+
+	return response.JsonResponse({"return": "Hello World \n"})
 
 class ListFAQCategoryAPIView(generics.ListAPIView):
 	"""

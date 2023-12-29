@@ -32,7 +32,7 @@ urlpatterns = [
     path('create-team-leader/', views.CreateTeamLeadAPIView.as_view(), name='create-team-leader'),
     path('create-team/', views.CreateTeamAPIView.as_view(), name='create-team'),
     path('create-faq-category/', views.CreateFAQCategoryAPIView.as_view(), name='create-faq-category'),
-    path('create-faq/', views.CreateFAQAPIView.as_view(), name='create-faq'),
+    path('create-faq/', views.CreateFAQAPIView.as_view(), name='create-faq')
 ]
 
 urlpatterns += router.urls
