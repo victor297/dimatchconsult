@@ -4,7 +4,7 @@ const projectsData = [
     {
       id: 1,
       projectTitle: "Modern Office Renovation",
-      image: "/project1.jpg",
+      image: "/office_renovation_project.jpg",
       clientName: "ABC Corporation",
       location: "City Center, New York",
       date: "2023-05-15",
@@ -24,8 +24,8 @@ const projectsData = [
     },
     {
       id: 2,
-      projectTitle: "E-commerce Website Development",
-      image: "/project2.jpg",
+      projectTitle: "E-commerce Web Development",
+      image: "/ecommerce_project.jpg",
       clientName: "XYZ Retailers",
       location: "Online",
       date: "2023-07-20",
@@ -46,7 +46,7 @@ const projectsData = [
     {
       id: 3,
       projectTitle: "Community Park Revitalization",
-      image: "/project.jpg",
+      image: "/community_park_project.jpg",
       clientName: "City Municipality",
       location: "Green Valley Suburb",
       date: "2023-08-30",
@@ -67,7 +67,7 @@ const projectsData = [
     {
       id: 4,
       projectTitle: "High-Tech Research Facility",
-      image: "/project.jpg",
+      image: "/high_tech_project.jpg",
       clientName: "Tech Innovations Ltd.",
       location: "Tech Hub City",
       date: "2023-10-12",
@@ -88,7 +88,7 @@ const projectsData = [
     {
       id: 5,
       projectTitle: "Luxury Residential Complex",
-      image: "/project.jpg",
+      image: "/luxury_res_project.jpg",
       clientName: "Elite Residences Ltd.",
       location: "Prime Residential Area",
       date: "2023-11-28",
@@ -109,7 +109,7 @@ const projectsData = [
     {
       id: 6,
       projectTitle: "Cultural Arts Center",
-      image: "/project.jpg",
+      image: "/cuture_art_project.jpg",
       clientName: "City Arts Council",
       location: "Downtown Cultural District",
       date: "2024-02-15",
@@ -130,7 +130,7 @@ const projectsData = [
     {
       id: 7,
       projectTitle: "Hospital Expansion Project",
-      image: "/project.jpg",
+      image: "/hospital_exp_project.jpg",
       clientName: "City Health Network",
       location: "Medical District",
       date: "2024-04-05",
@@ -151,7 +151,7 @@ const projectsData = [
     {
       id: 8,
       projectTitle: "Sustainable Urban Development",
-      image: "/project.jpg",
+      image: "/urban_dev_project.jpg",
       clientName: "Urban Development Authority",
       location: "City Redevelopment Zone",
       date: "2024-06-20",

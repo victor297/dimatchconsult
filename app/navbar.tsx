@@ -44,21 +44,26 @@ const Navbar = () => {
     },
     {
       id: 4,
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      id: 5,
       name: "Services",
       link: "/services",
     },
     {
-      id: 5,
+      id: 6,
       name: "faq",
       link: "/faq",
     },
     {
-      id: 6,
+      id: 7,
       name: "Contact Us",
       link: "/contact",
     },
     {
-      id: 7,
+      id: 8,
       name: "teams",
       link: "/team",
     },
