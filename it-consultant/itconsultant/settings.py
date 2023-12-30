@@ -96,6 +96,7 @@ REST_FRAMEWORK = {
         # 'rest_framework_simplejwt.authentication.JWTAuthentication',
         # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'administrator.authentications.SessionAuthentication',
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -142,9 +143,9 @@ WSGI_APPLICATION = 'itconsultant.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DJANGO_DATABASE_ENGINE'),
+        'ENGINE': os.getenv("DJANGO_DATABASE_ENGINE"),
         'PASSWORD': os.getenv("DJANGO_DATABASE_PASS"),
-        'NAME': os.getenv('DJANGO_DATABASE_NAME'),
+        'NAME':  os.getenv("DJANGO_DATABASE_NAME"),
         'USER': os.getenv("DJANGO_DATABASE_USER"),
         'HOST': os.getenv("DJANGO_DATABASE_HOST"),
         'PORT': os.getenv("DJANGO_DATABASE_PORT"),

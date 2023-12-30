@@ -1,8 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from . import models
-
-
+# Models Serializers
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = get_user_model()
@@ -30,14 +29,23 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 		ordering = ["-written_on"]
 
 class CreateServiceSerializer(serializers.ModelSerializer):
+	list_content = serializers.ListSerializer(child=serializers.CharField(), max_length=15)
 	class Meta:
 		model = models.RequestService
 		fields = [
 			"title", "heading1", "content1", "heading2",
 			"content2", "heading3", "content3", "subheading",
-			"image", "written_on"
+			"image", "list_content"
 		]
 		ordering = ["-written_on"]
+
+	def create(self, validated_data):
+		v_list_content = validated_data.pop('list_content')
+		v_service = validated_data
+		service = models.RequestService.objects.create(**validated_data)
+		for description in v_list_content:
+			models.ListContent.objects.create(description=description, service=service)
+		return service
 
 class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
