@@ -6,6 +6,7 @@ from django.db import models
 class Client(models.Model):
 	full_name = models.CharField(max_length=150)
 	email = models.CharField(max_length=150, unique=True)
+	has_been_answered = models.BooleanField(default=False)
 	created_on = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
@@ -27,6 +28,7 @@ class RequestService(models.Model):
 	subheading = models.CharField(max_length=80)
 	written_on = models.DateTimeField(auto_now=True)
 	image = models.CharField(max_length=150)
+	image2 = models.CharField(max_length=150)
 
 	def __str__(self):
 		return f"{self.title}"
