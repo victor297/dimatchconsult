@@ -4,8 +4,7 @@ from rest_framework import decorators, permissions, response
 # Create your views here.
 
 @decorators.api_view(['POST'])
-@decorators.permission_classes([permissions.IsAuthenticated,
-	permissions.IsAdmin])
+@decorators.permission_classes([permissions.IsAuthenticated])
 def send_client_mail(request):
 	data = request.data
 	try:
