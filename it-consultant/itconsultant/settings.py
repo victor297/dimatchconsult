@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     # Installed Apps
     'administrator.apps.AdministratorConfig',
     'utils.apps.UtilsConfig',
+    'clients.apps.ClientsConfig',
 ]
 
 MIDDLEWARE = [
