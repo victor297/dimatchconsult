@@ -12,11 +12,11 @@ class SessionAuthentication(SA):
 class SessionAuthenticationScheme(OpenApiAuthenticationExtension):
 	target_class = 'administrator.authentications.SessionAuthentication'
 	name = 'cookieAuth'
-	priority = '-1'
+	priority = -1
 
 	def get_security_definition(self, auto_schema):
-	return {
-	    'type': 'apiKey',
-	    'in': 'cookie',
-	    'name': settings.SESSION_COOKIE_NAME,
-	}
+		return {
+		    'type': 'apiKey',
+		    'in': 'cookie',
+		    'name': settings.SESSION_COOKIE_NAME,
+		}
