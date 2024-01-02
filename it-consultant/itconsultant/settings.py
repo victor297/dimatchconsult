@@ -131,7 +131,7 @@ EMAIL_HOST = os.getenv("email_host")
 EMAIL_HOST_USER = os.getenv("email")
 EMAIL_HOST_PASSWORD = os.getenv("e_pass")
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "no-reply@itconsultant.com"
+DEFAULT_FROM_EMAIL = "no-reply@dimatechitconsultant.com"
 
 SITE_ID = 1
 

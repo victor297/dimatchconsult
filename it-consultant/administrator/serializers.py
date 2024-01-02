@@ -28,8 +28,17 @@ class RequestServiceSerializer(serializers.ModelSerializer):
 		]
 		ordering = ["-written_on"]
 
+class CreateListSerializer(serializers.ModelSerializer):
+	id = serializers.IntegerField()
+	class Meta:
+		model = models.ListContent
+		fields = [
+			'id',
+			'description'
+		]
+
 class CreateServiceSerializer(serializers.ModelSerializer):
-	list_content = serializers.ListSerializer(child=serializers.CharField(), max_length=15)
+	list_content = CreateListSerializer(many=True)
 	class Meta:
 		model = models.RequestService
 		fields = [
@@ -43,9 +52,30 @@ class CreateServiceSerializer(serializers.ModelSerializer):
 		v_list_content = validated_data.pop('list_content')
 		v_service = validated_data
 		service = models.RequestService.objects.create(**validated_data)
-		for description in v_list_content:
-			models.ListContent.objects.create(description=description, service=service)
+		for list_content in v_list_content:
+			list_content.pop('id')
+			models.ListContent.objects.create(**list_content, service=service)
 		return service
+
+	def update(self, instance, validated_data):
+		list_content = validated_data.pop('list_content')
+		instance.heading1 = validated_data.get('heading1', instance.heading1)
+		instance.content2 = validated_data.get('content2', instance.content2)
+		instance.heading2 = validated_data.get('heading2', instance.heading2)
+		instance.content2 = validated_data.get('content2', instance.content2)
+		instance.heading3 = validated_data.get('heading3', instance.heading3)
+		instance.content3 = validated_data.get('content3', instance.content3)
+		instance.subheading = validated_data.get('subheading', instance.subheading)
+		instance.image = validated_data.get('image', instance.image)
+		instance.image2 = validated_data.get('image2', instance.image2)
+
+		for list_c in instance.list_content.all():
+			for content_list in list_content:
+				if (list_c.pk == list_content.get('id')):
+					list_c.description = list_content.get('description')
+					list_c.save()
+					break
+		return instance
 
 class ListContentSerializer(serializers.ModelSerializer):
 	class Meta:
