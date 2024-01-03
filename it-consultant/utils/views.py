@@ -7,10 +7,11 @@ from rest_framework import decorators, permissions, response
 @decorators.permission_classes([permissions.IsAuthenticated])
 def send_client_mail(request):
 	data = request.data
-	try:
-		send_mail(data['subject'].strip(),
-			data['message'].strip(),
-			None, data['recipients'])
-	except BadHeaderError:
-		return response.Response({"details": "Invalid mail header"})
-	return response.Response({"details": f"mail sent to {data['mail']}"})
+	print(data)
+	# try:
+	# 	send_mail(data['subject'].strip(),
+	# 		data['message'].strip(),
+	# 		None, data['recipients'])
+	# except BadHeaderError:
+	# 	return response.Response({"details": "Invalid mail header"})
+	return response.Response({"details": f"mail sent to"})
