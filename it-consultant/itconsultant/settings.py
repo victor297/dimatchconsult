@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     # Installed Apps
     'administrator.apps.AdministratorConfig',
     'utils.apps.UtilsConfig',
+    'clients.apps.ClientsConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,11 +128,12 @@ TEMPLATES = [
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("email_host")
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv("email")
 EMAIL_HOST_PASSWORD = os.getenv("e_pass")
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "no-reply@itconsultant.com"
+DEFAULT_FROM_EMAIL = "no-reply@dimatechitconsultant.com"
 
 SITE_ID = 1
 
