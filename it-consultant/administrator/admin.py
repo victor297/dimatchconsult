@@ -3,11 +3,6 @@ from . import models
 
 # Register your models here.
 
-class ClientAdmin(admin.ModelAdmin):
-	list_display = (
-		'full_name',
-		'email',
-	)
 
 class RequestServiceAdmin(admin.ModelAdmin):
 	list_display = (
@@ -17,7 +12,6 @@ class RequestServiceAdmin(admin.ModelAdmin):
 	)
 
 
-admin.site.register(models.Client, ClientAdmin)
 admin.site.register(models.RequestService)
 admin.site.register(models.ListContent)
 admin.site.register(models.FAQCategory)

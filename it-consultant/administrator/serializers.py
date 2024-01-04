@@ -10,13 +10,6 @@ class UserSerializer(serializers.ModelSerializer):
 		]
 		ordering = ["-id"]
 
-
-class ClientSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = models.Client
-		fields = ('full_name', 'email', 'created_on', 'id', 'has_been_answered')
-		ordering = ["-id"]
-
 class RequestServiceSerializer(serializers.ModelSerializer):
 	list_content = serializers.StringRelatedField(many=True)
 	class Meta:
