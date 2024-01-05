@@ -1,4 +1,4 @@
-"use client"
+
 import teams from "@/utils/teams";
 import Image from "next/image";
 import Link from "next/link";

@@ -5,28 +5,6 @@ import { SlCalender } from "react-icons/sl";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from 'next/link';
 
-// {
-//     id: 1,
-//     projectTitle: "Modern Office Renovation",
-//     image: "/project1.jpg",
-//     clientName: "ABC Corporation",
-//     location: "City Center, New York",
-//     date: "2023-05-15",
-//     website: "http://www.abccorporation.com",
-//     projectDetails: "A comprehensive renovation project focusing on creating a dynamic and collaborative workspace. The design incorporates sleek aesthetics, state-of-the-art technology, and ergonomic furnishings to enhance employee productivity and well-being.",
-//     listContent: [
-//       "Open workspace layout",
-//       "Smart lighting solutions",
-//       "Tech-integrated meeting rooms",
-//     ],
-//     projectDetails2: "Integration of Sustainable Practices",
-//     listContent2: [
-//       "Energy-efficient HVAC systems",
-//       "Recycled and eco-friendly materials",
-//       "Green rooftop garden",
-//     ],
-//   },
-
 interface componentProps {
     key:number;
     project:{
@@ -39,7 +17,7 @@ interface componentProps {
     }
 
 
-const ProjectCard:React.FC<componentProps> = ({key, project}) => {
+const ProjectCard:React.FC<componentProps> = ({project}) => {
 
     
     return (
