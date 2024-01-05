@@ -13,7 +13,7 @@ import { FaHandsHelping } from "react-icons/fa";
 import Banner from "../components/banner/Banner";
 import Container from "../components/Container";
 import projectData from "../../utils/projects"
-import Project from "./Project";
+import ProjectCard from "./ProjectCard";
 
 const ProjectContent = () => {
   
@@ -36,7 +36,7 @@ const ProjectContent = () => {
             <div className="grid lg:grid-cols-3 gap-3 lg:w-11/12 w-10/12">
               {
                 projectData.map(project=>{
-                  return <Project key={project.id} project={project} />
+                  return <ProjectCard key={project.id} project={project} />
                 })
               }
             </div>
