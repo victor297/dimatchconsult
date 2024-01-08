@@ -13,7 +13,7 @@ import { FaHandsHelping } from "react-icons/fa";
 import Banner from "../components/banner/Banner";
 import Container from "../components/Container";
 
-const AboutContent = () => {
+const TeamContent = () => {
   return (
     <div>
       <Banner
@@ -34,4 +34,4 @@ const AboutContent = () => {
   );
 };
 
-export default AboutContent;
+export default TeamContent;

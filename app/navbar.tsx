@@ -39,8 +39,8 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: `Pages`,
-      link: "/pages",
+      name: "teams",
+      link: "/team",
     },
     {
       id: 4,
@@ -56,11 +56,6 @@ const Navbar = () => {
       id: 6,
       name: "Contact Us",
       link: "/contact",
-    },
-    {
-      id: 7,
-      name: "teams",
-      link: "/team",
     },
   ];
 
