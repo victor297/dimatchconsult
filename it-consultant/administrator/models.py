@@ -6,6 +6,7 @@ from django.db import models
 class Client(models.Model):
 	full_name = models.CharField(max_length=150)
 	email = models.CharField(max_length=150, unique=True)
+	has_been_answered = models.BooleanField(default=False)
 	created_on = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
@@ -27,9 +28,10 @@ class RequestService(models.Model):
 	subheading = models.CharField(max_length=80)
 	written_on = models.DateTimeField(auto_now=True)
 	image = models.CharField(max_length=150)
+	image2 = models.CharField(max_length=150)
 
 	def __str__(self):
-		return f"{self.service}"
+		return f"{self.title}"
 
 class ListContent(models.Model):
 	"""\
@@ -39,14 +41,20 @@ class ListContent(models.Model):
 	description = models.TextField()
 	service = models.ForeignKey(RequestService, related_name='list_content', on_delete=models.CASCADE)
 
+	def __str__(self):
+		return f"{self.description}"
+
 class FAQCategory(models.Model):
-	name = models.CharField(max_length=80)
+	name = models.CharField(max_length=80, unique=True)
+
+	def __str__(self):
+		return f"{self.name}"
 
 class FAQ(models.Model):
 	"""\
 		The frequently asked question model
 	"""
-	question = models.CharField(max_length=150)
+	question = models.CharField(max_length=150, unique=True)
 	answer = models.TextField()
 	category = models.ForeignKey(FAQCategory, related_name='items', on_delete=models.CASCADE)
 
@@ -72,11 +80,17 @@ class TeamLead(models.Model):
 	image = models.CharField(max_length=150)
 	team = models.ForeignKey(Team, related_name='team_lead', on_delete=models.CASCADE)
 
+	def __str__(self):
+		return f"{self.name} leads {self.team.name}"
+
 class TeamMember(models.Model):
 	name = models.CharField(max_length=120)
 	position = models.CharField(max_length=80, help_text='Role Played In The Team')
 	image = models.CharField(max_length=150)
 	team = models.ForeignKey(Team, related_name='members', on_delete=models.CASCADE)
+
+	def __str__(self):
+		return f"{self.name} in {self.team.name}"
 
 class Project(models.Model):
 	title = models.CharField(max_length=150)
@@ -88,7 +102,11 @@ class Project(models.Model):
 	details = models.TextField()
 	details2 = models.TextField()
 
+	def __str__(self):
+		return f"{self.title}"
+
 class ProjectListing(models.Model):
 	content = models.TextField()
+	project = models.ForeignKey(Project, related_name='list_content', on_delete=models.CASCADE)
 
 
