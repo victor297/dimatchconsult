@@ -6,7 +6,7 @@ const teams = [
       id: 101,
       name: "John Doe",
       position: "Team Lead",
-      image: "/photo.jpg",
+      image: "/team1.png",
     },
     members: [
       {
@@ -30,7 +30,7 @@ const teams = [
       id: 201,
       name: "Alice Brown",
       position: "Marketing Manager",
-      image: "/about.jpg",
+      image: "/team2.png",
     },
     members: [
       {
@@ -48,7 +48,7 @@ const teams = [
       id: 301,
       name: "David White",
       position: "Sales Manager",
-      image: "/team.jpg",
+      image: "/team3.png",
     },
     members: [
       {
