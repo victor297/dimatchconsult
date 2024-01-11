@@ -136,13 +136,16 @@ const AboutContent = () => {
           <p className=" text-center font-bold text-4xl p-2">
             Meet Our Experts
           </p>
-          <div className="grid grid-cols sm:grid-cols-3 gap-6 shrink-0 text-center p-2 h-80">
+          <div className="grid grid-cols sm:grid-cols-3 gap-6 shrink-0 text-center p-2 h-96">
             {teams.map((team) => (
               <div key={team.id} className="group relative ">
                 <Image
-                  fill
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="top"
                   alt={team.name}
-                  className="w-full object-cover rounded-md"
+                  // className="w-full object-contain rounded-md"
+                  className="rounded-md"
                   src={team.teamLead.image}
                 />
                 <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center sm:justify-end opacity-90 text-white p-4">

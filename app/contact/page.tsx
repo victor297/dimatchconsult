@@ -24,10 +24,6 @@ const Contact = () => {
       />
 
       <Container>
-        {/* <div className={`min-h-[90vh] flex flex-col sm:flex-row`}> */}
-        {/* <div className="w-full lg:w-5/12 bg-opacity-70 bg-slate-100 backdrop-blur-lg inset-0 flex flex-col justify-end gap-6 p-16">
-            Contact us
-          </div> */}
         <div className="flex gap-20 mt-40 mb-20">
           <div className="basis-1/2 relative">
             <Image
@@ -122,7 +118,6 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* </div> */}
         <form>
           <div className="flex flex-col gap-10">
             <div className="flex justify-between">
