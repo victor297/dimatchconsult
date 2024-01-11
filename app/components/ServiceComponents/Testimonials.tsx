@@ -6,7 +6,7 @@ export default function Testimonials() {
       <div className="flex gap-8 flex-col md:flex-row">
         <div>
           <p className="text-[14px]">testimonial</p>
-          <p className="text-[20px] font-bold">What Our Client Say’s</p>
+          <p className="text-[20px] font-bold">What Our Client Say&#39;s</p>
           <p className="text-[18px]">
             Leverage agile frameworks to provide a robust synopsis for high
             level overviews.Iterative{" "}

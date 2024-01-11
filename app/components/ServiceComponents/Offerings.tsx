@@ -7,7 +7,7 @@ export default function Offerings() {
       <div className="text-white w-auto lg:w-[1219px] py-5 grid place-content-center">
         <div className="text-center mb-6 mt-6 md:mx-10 lg:mx-[5rem] flex flex-col md:flex-row items-center justify-center ">
           <div className="text-center md:text-left flex-1">
-            <h1 className="text-sm mb-2 md:mb-4">What we're offering</h1>
+            <h1 className="text-sm mb-2 md:mb-4">What we&lsquo;re offering</h1>
             <p className="text-lg font-bold">
               Services we are providing to our customers
             </p>
