@@ -39,7 +39,7 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: "teams",
+      name: "Teams",
       link: "/team",
     },
     {
@@ -54,7 +54,7 @@ const Navbar = () => {
     },
     {
       id: 6,
-      name: "faq",
+      name: "Faq",
       link: "/faq",
     },
     {

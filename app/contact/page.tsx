@@ -123,11 +123,13 @@ const Contact = () => {
             <div className="flex justify-between">
               <input
                 type="text"
+                required
                 placeholder="Your Name"
                 className="p-4 bg-gray-100 sm:rounded-[4px] basis-[48%]"
               />
               <input
                 type="text"
+                required
                 placeholder="Phone Number"
                 className="p-4 bg-gray-100 sm:rounded-[4px] basis-[48%]"
               />
@@ -135,6 +137,7 @@ const Contact = () => {
             <div className="flex justify-between">
               <input
                 type="text"
+                required
                 placeholder="Email Address"
                 className="p-4 bg-gray-100 sm:rounded-[4px] basis-[48%]"
               />

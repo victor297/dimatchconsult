@@ -12,6 +12,7 @@ module.exports = {
         poppinsSemiBold: ["Poppins", "sans-serif"], //font-weight: 600
         poppinsRegular: ["Poppins", "sans-serif"], //font-weight: 400
         interSemiBold: ["Inter", "sans-serif"], //font-weight: 600
+        interMedium: ["Inter", "sans-serif"], //font-weight: 500
         interRegular: ["Inter", "sans-serif"], //font-weight: 400
         cabinRegular: ["Cabin", "sans-serif"], //font-weight: 400
       },
@@ -21,8 +22,9 @@ module.exports = {
         lightBlue: " rgba(122,133,232,1.00)",
         green: "rgba(64, 221, 182, 1)",
         darkGray: "rgba(55, 57, 63, 1)",
-        lightGray: "rgba(185, 185, 185, 1)",
+        // lightGray: "rgba(185, 185, 185, 1)",
         veryLightGray: "rgba(185, 185, 185, 1)",
+        lightGray: "rgba(125, 125, 125, 1)",
         transparentGray: "rgba(55, 57, 63, 0.8)",
         transparentGrayBanner: "rgba(55, 57, 63, 0.91)",
       },
